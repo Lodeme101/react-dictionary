@@ -20,11 +20,11 @@ export default function Dictionary(props) {
 
   function search() {
     // documentation: https://dictionaryapi.dev/e
-    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${keyword}`;
+    let apiKey = "b470c9ata4051fc05b61a5bd8d4od2f3";
+    let apiUrl = `https://api.shecodes.io/dictionary/v1/define?word=${keyword}&key=${apiKey}`;
     axios.get(apiUrl).then(handleDictionResponse);
 
     //documentation: https://www.shecodes.io/learn/apis/dictionary
-    let apiKey = "b470c9ata4051fc05b61a5bd8d4od2f3";
     let imagesApiUrl = `https://api.shecodes.io/images/v1/search?query=${keyword}&key=${apiKey}`;
     axios.get(imagesApiUrl).then(handleImagesResponse);
   }
