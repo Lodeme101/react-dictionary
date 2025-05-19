@@ -11,7 +11,7 @@ export default function Dictionary(props) {
   let [photos, setPhotos] = useState(null);
 
   function handleDictionResponse(response) {
-    setResults(response.data[0]);
+    setResults(response.data);
   }
 
   function handleImagesResponse(response) {
@@ -56,7 +56,7 @@ export default function Dictionary(props) {
             />
           </form>
           <div className="hint">
-            suggested words: sunset, wine, yoga, plant...
+            suggested words: fire, earth, water, air...
           </div>
         </section>
         <Results results={results} />
